@@ -99,7 +99,9 @@ namespace TechJobs.Data
                           where j.ID == id
                           select j;
 
-            return results.Single();
+            return results.SingleOrDefault();//originally results.Single but this was
+                                             // causing an error so I found solution to
+                                             //this online to add Default
         }
 
     }
